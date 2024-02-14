@@ -2,7 +2,7 @@ const assert = require('assert');
 const factorial = require('../src/factorial.js');
 
 describe('factorial', function () {
-  it.only('4! should give 24', function () {
+  it('4! should give 24', function () {
     assert.equal(factorial(4), 24);
   });
 
