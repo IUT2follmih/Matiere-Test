@@ -1,5 +1,6 @@
-const assert = require("assert");
 const Money = require("../src/money.js");
+const chai = require("chai");
+const assert = require("chai").assert;
 
 describe("Money", function () {
   describe("#add()", function () {
