@@ -165,8 +165,25 @@ describe('Black pawn', function () {
       assert.equal(output, oracle);
     });
 
-    /*
-     * À compléter
-     */
+    it('should be able to move forward 2 ranks from its initial position', function () {
+      const output = pawn.canMove(pawn.rank - 2, pawn.file),
+        oracle = true;
+
+      assert.equal(output, oracle);
+    });
+
+    it('sould not be able to move backward 3 ranks', function () {
+      const output = pawn.canMove(pawn.rank - 3, pawn.file),
+        oracle = false;
+
+      assert.equal(output, oracle);
+    });
+
+    it('sould not be able to move forward 1 ranks', function () {
+      const output = pawn.canMove(pawn.rank + 1, pawn.file),
+        oracle = false;
+
+      assert.equal(output, oracle);
+    });
   });
 });
