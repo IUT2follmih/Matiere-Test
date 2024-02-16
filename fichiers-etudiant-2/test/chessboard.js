@@ -91,12 +91,22 @@ describe('Chessboard', function () {
         fileStr = String.fromCharCode(97 - 1 + file);
 
       // Pour vérifier la présence des pièces blanches sur le rang 1 :
-      it.skip(`White piece ${Constructor.prototype.constructor.name} should be present at (1, ${fileStr})`, function () {
+      it(`White piece ${Constructor.prototype.constructor.name} should be present at (1, ${fileStr})`, function () {
         const rank = 1,
-          piece = chessboard.getPiece(rank, file),
-          isCorrectInstance = piece instanceof Constructor;
+         piece = chessboard.getPiece(rank, file),
+          isCorrectInstance = piece instanceof Constructor,
+          isCorrectColor = piece.color === Color.WHITE;
 
-        // À compléter
+        assert.equal(isCorrectInstance, true);
+      });
+
+      it('Black piece ${Constructor.prototype.constructor.name} should be present at (8, ${fileStr})', function () {
+        const rank = 8,
+          piece = chessboard.getPiece(rank, file),
+          isCorrectInstance = piece instanceof Constructor,
+          isCorrectColor = piece.color === Color.BLACK;
+
+        assert.equal(isCorrectInstance, true);
       });
     });
   });
