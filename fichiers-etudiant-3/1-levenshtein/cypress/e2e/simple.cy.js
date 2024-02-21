@@ -22,6 +22,7 @@ describe("Simple test suite", () => {
     cy.get("#output").should("have.css", "visibility", "visible");
   });
 
+  // On teste la distance si les deux chaînes sont vides
   it("La distance n'affiche rien si les champs sont vides", () => {
     // On simule la saisie clavier de l'utilisateur et on en profite pour tester les majuscules.
     cy.get("#str1-field").type("{selectall}{backspace}");
@@ -34,18 +35,16 @@ describe("Simple test suite", () => {
     cy.get("#output").should("have.css", "visibility", "hidden");
   });
 
+  // On teste le bouton "Swap"
   it("Le bouton inverse les champs", () => {
     cy.get("#str1-field").type("niche");
     cy.get("#str2-field").type("chiens");
-
-    // On simule le clic sur le bouton "Compute distance"
-    cy.get("#compute-distance-btn").click();
 
     // On simule le clic sur le bouton "Swap"
     cy.get("#reverse-btn").click();
 
     // On vérifie que les champs ont été inversés
-    cy.get("#str1").should("have.value", "niche");
-    cy.get("#str2").should("have.value", "chiens");
+    cy.get("#str1-field").should("have.value", "chiens");
+    cy.get("#str2-field").should("have.value", "niche");
   });
 });

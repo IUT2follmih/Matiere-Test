@@ -13,5 +13,10 @@
     "cypress": "cypress open"
   },
   "author": "Nicolas Hili <nicolas.hili@univ-grenoble-alpes.fr>",
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "cypress": "^13.6.5",
+    "http-server": "^14.1.1"
+  }
 }
