@@ -1,0 +1,23 @@
+{
+  "name": "example-factorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint src/",
+    "coverage": "nyc --temp-dir=./reports/.nyc-output mocha",
+    "report": "nyc report --reporter=html --temp-dir=./reports/.nyc-output --report-dir=./reports/coverage",
+    "build": "browserify index.js -o dist/levenshtein.js -s 'levenshtein'",
+    "doc": "jsdoc src/ -d docs",
+    "cypress": "cypress open"
+  },
+  "author": "Nicolas Hili <nicolas.hili@univ-grenoble-alpes.fr>",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "browserify": "^17.0.0"
+  }
+}
